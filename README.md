@@ -1,4 +1,4 @@
-# RipperFoxExtensios
+# RipperFoxExtension for chooms
 The Firefox add-on part of RipperFox ported to Chrome for your chrome needs, choom.
 
 ## The backend can be found here
