@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "RipperChrome",
+  "version": "1.0",
+  "description": "Right-click anywhere to download videos, GIFs, or images via your local RipperFox backend.",
+  
+  "permissions": [
+    "contextMenus",
+    "storage",
+    "activeTab",
+    "notifications"
+  ],
+  "host_permissions": [
+    "*://localhost/*",
+    "*://127.0.0.1/*"
+  ],
+  
+  "background": {
+    "service_worker": "background.js"
+  },
+  
+  "action": {
+    "default_title": "RipperChrome",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "ripperfox.png"
+    }
+  },
+  
+  "icons": {
+    "16": "icon.png",
+    "48": "icon.png",
+    "128": "ripperfox.png"
+  },
+  
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
